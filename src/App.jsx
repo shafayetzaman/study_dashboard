@@ -248,6 +248,58 @@ const MOTIVATIONAL_QUOTES = [
   { text: "Everything you've ever wanted is on the other side of fear.", author: "George Addair", category: "Courage" },
   { text: "Failure will never overtake me if my determination to succeed is strong enough.", author: "Og Mandino", category: "Determination" },
   { text: "The harder the conflict, the more glorious the triumph.", author: "Thomas Paine", category: "Perseverance" }
+  ,
+  { text: "Success is not how high you have climbed, but how you make a positive difference to the world.", author: "Roy T. Bennett", category: "Purpose" },
+  { text: "The only place where success comes before work is in the dictionary.", author: "Vidal Sassoon", category: "Effort" },
+  { text: "Act as if what you do makes a difference. It does.", author: "William James", category: "Action" },
+  { text: "Believe that life is worth living, and your belief will help create the fact.", author: "William James", category: "Belief" },
+  { text: "The greatest weapon against stress is our ability to choose one thought over another.", author: "William James", category: "Mindset" },
+  { text: "Nothing is impossible; the word itself says 'I'm possible!'", author: "Audrey Hepburn", category: "Belief" },
+  { text: "Success is a journey, not a destination.", author: "Ben Sweetland", category: "Journey" },
+  { text: "If you want to lift yourself up, lift up someone else.", author: "Booker T. Washington", category: "Kindness" },
+  { text: "Character cannot be developed in ease and quiet.", author: "Helen Keller", category: "Growth" },
+  { text: "Although the world is full of suffering, it is full also of the overcoming of it.", author: "Helen Keller", category: "Resilience" },
+  { text: "Keep your face always toward the sunshine, and shadows will fall behind you.", author: "Walt Whitman", category: "Optimism" },
+  { text: "It is never too late to be what you might have been.", author: "George Eliot", category: "Growth" },
+  { text: "Happiness is not something ready made. It comes from your own actions.", author: "Dalai Lama", category: "Happiness" },
+  { text: "Our greatest fear should not be of failure but of succeeding at things in life that don't really matter.", author: "Francis Chan", category: "Purpose" },
+  { text: "Optimism is the faith that leads to achievement.", author: "Helen Keller", category: "Optimism" },
+  { text: "Strength and growth come only through continuous effort and struggle.", author: "Napoleon Hill", category: "Growth" },
+  { text: "Whatever the mind of man can conceive and believe, it can achieve.", author: "Napoleon Hill", category: "Belief" },
+  { text: "The difference between ordinary and extraordinary is that little extra.", author: "Jimmy Johnson", category: "Excellence" },
+  { text: "Success is the progressive realization of a worthy goal or ideal.", author: "Earl Nightingale", category: "Goals" },
+  { text: "We become what we think about most of the time.", author: "Earl Nightingale", category: "Mindset" },
+  { text: "You can't use up creativity. The more you use, the more you have.", author: "Maya Angelou", category: "Creativity" },
+  { text: "Every child is an artist. The problem is how to remain an artist once he grows up.", author: "Pablo Picasso", category: "Creativity" },
+  { text: "Action is the foundational key to all success.", author: "Pablo Picasso", category: "Action" },
+  { text: "Whenever you find yourself on the side of the majority, it is time to pause and reflect.", author: "Mark Twain", category: "Independence" },
+  { text: "What we achieve inwardly will change outer reality.", author: "Plutarch", category: "Inner Power" },
+  { text: "A man who dares to waste one hour of time has not discovered the value of life.", author: "Charles Darwin", category: "Time" },
+  { text: "The more I practice, the luckier I get.", author: "Gary Player", category: "Practice" },
+  { text: "I hated every minute of training, but I said, 'Don't quit. Suffer now and live the rest of your life as a champion.'", author: "Muhammad Ali", category: "Perseverance" },
+  { text: "Success isn't always about greatness. It's about consistency.", author: "Dwayne Johnson", category: "Consistency" },
+  { text: "It's not about perfect. It's about effort.", author: "Jillian Michaels", category: "Effort" },
+  { text: "You can't cross the sea merely by standing and staring at the water.", author: "Rabindranath Tagore", category: "Action" },
+  { text: "Faith is the bird that feels the light when the dawn is still dark.", author: "Rabindranath Tagore", category: "Hope" },
+  { text: "Let us sacrifice our today so that our children can have a better tomorrow.", author: "A. P. J. Abdul Kalam", category: "Sacrifice" },
+  { text: "Dream, dream, dream. Dreams transform into thoughts and thoughts result in action.", author: "A. P. J. Abdul Kalam", category: "Dreams" },
+  { text: "If you want to shine like a sun, first burn like a sun.", author: "A. P. J. Abdul Kalam", category: "Effort" },
+  { text: "Arise, awake, and stop not till the goal is reached.", author: "Swami Vivekananda", category: "Perseverance" },
+  { text: "You cannot believe in God until you believe in yourself.", author: "Swami Vivekananda", category: "Self-Belief" },
+  { text: "The greatest mistake you can make in life is to be continually fearing you will make one.", author: "Elbert Hubbard", category: "Fear" },
+  { text: "There is no failure except in no longer trying.", author: "Elbert Hubbard", category: "Perseverance" },
+  { text: "Small deeds done are better than great deeds planned.", author: "Peter Marshall", category: "Action" },
+  { text: "Happiness depends upon ourselves.", author: "Aristotle", category: "Happiness" },
+  { text: "Life is 10% what happens to us and 90% how we react to it.", author: "Charles R. Swindoll", category: "Mindset" },
+  { text: "The only thing worse than starting something and failing is not starting something.", author: "Seth Godin", category: "Action" },
+  { text: "Perseverance is not a long race; it is many short races one after the other.", author: "Walter Elliot", category: "Perseverance" },
+  { text: "You only live once, but if you do it right, once is enough.", author: "Mae West", category: "Living" },
+  { text: "Limit your 'always' and your 'nevers.'", author: "Amy Poehler", category: "Mindset" },
+  { text: "Doing the best at this moment puts you in the best place for the next moment.", author: "Oprah Winfrey", category: "Presence" },
+  { text: "The biggest adventure you can take is to live the life of your dreams.", author: "Oprah Winfrey", category: "Dreams" },
+  { text: "Turn your wounds into wisdom.", author: "Oprah Winfrey", category: "Growth" },
+  { text: "If you want the rainbow, you gotta put up with the rain.", author: "Dolly Parton", category: "Patience" },
+  { text: "Your attitude, not your aptitude, will determine your altitude.", author: "Zig Ziglar", category: "Mindset" }
 ];
 
 
@@ -516,9 +568,8 @@ const SvgDonutChart = ({ title, data, totalChapters, completedTotal }) => {
         {slices.map((slice, idx) => (
           <div
             key={idx}
-            className={`flex items-center justify-between p-2 rounded-xl transition-colors cursor-pointer ${
-              hoveredSlice === idx ? 'bg-[#1F2937]' : ''
-            }`}
+            className={`flex items-center justify-between p-2 rounded-xl transition-colors cursor-pointer ${hoveredSlice === idx ? 'bg-[#1F2937]' : ''
+              }`}
             onMouseEnter={() => setHoveredSlice(idx)}
             onMouseLeave={() => setHoveredSlice(null)}
           >
@@ -591,9 +642,9 @@ export default function App() {
     return Number.isFinite(savedGoal) ? Math.max(0, Math.min(1440, Math.round(savedGoal))) : 0;
   });
   const [studyGoalHours, setStudyGoalHours] = useState(getInitialStudyGoalHours);
-  const [studyTimeEditor, setStudyTimeEditor] = useState(() => () => {});
-  const [resetStudyClock, setResetStudyClock] = useState(() => () => {});
-  const [restoreStudyData, setRestoreStudyData] = useState(() => () => {});
+  const [studyTimeEditor, setStudyTimeEditor] = useState(() => () => { });
+  const [resetStudyClock, setResetStudyClock] = useState(() => () => { });
+  const [restoreStudyData, setRestoreStudyData] = useState(() => () => { });
   const [todayKey, setTodayKey] = useState(() => toDateKey(new Date()));
 
   // Filters State
@@ -839,11 +890,10 @@ export default function App() {
                 <button
                   key={item.id}
                   onClick={() => setActiveTab(item.id)}
-                  className={`w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl text-sm font-medium transition-all cursor-pointer ${
-                    isActive
+                  className={`w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl text-sm font-medium transition-all cursor-pointer ${isActive
                       ? 'bg-[#111827] text-[#FB7185] border border-[#FB7185]/30 shadow-lg shadow-[#FB7185]/5'
                       : 'text-[#94A3B8] hover:text-[#F8FAFC] hover:bg-[#111827]/50'
-                  }`}
+                    }`}
                 >
                   <div className="flex items-center gap-3">
                     <Icon className={`w-4 h-4 ${isActive ? 'text-[#FB7185]' : 'text-[#64748B]'}`} />
@@ -880,9 +930,8 @@ export default function App() {
             <button
               key={item.id}
               onClick={() => setActiveTab(item.id)}
-              className={`cursor-pointer flex flex-col items-center gap-1 p-1.5 rounded-lg text-[11px] font-medium transition-colors ${
-                isActive ? 'text-[#FB7185]' : 'text-[#64748B]'
-              }`}
+              className={`cursor-pointer flex flex-col items-center gap-1 p-1.5 rounded-lg text-[11px] font-medium transition-colors ${isActive ? 'text-[#FB7185]' : 'text-[#64748B]'
+                }`}
             >
               <Icon className="w-5 h-5" />
               <span>{item.label}</span>
@@ -955,7 +1004,7 @@ export default function App() {
                   <span className="text-xl sm:text-2xl font-bold text-[#F8FAFC]">
                     {metrics.totalMcq}<span className="text-xs text-[#64748B] font-normal">/50</span>
                   </span>
-                  <span className="text-xs font-semibold text-[#94A3B8]">{Math.round((metrics.totalMcq/50)*100)}%</span>
+                  <span className="text-xs font-semibold text-[#94A3B8]">{Math.round((metrics.totalMcq / 50) * 100)}%</span>
                 </div>
               </div>
 
@@ -965,7 +1014,7 @@ export default function App() {
                   <span className="text-xl sm:text-2xl font-bold text-[#F8FAFC]">
                     {metrics.totalCq}<span className="text-xs text-[#64748B] font-normal">/50</span>
                   </span>
-                  <span className="text-xs font-semibold text-[#94A3B8]">{Math.round((metrics.totalCq/50)*100)}%</span>
+                  <span className="text-xs font-semibold text-[#94A3B8]">{Math.round((metrics.totalCq / 50) * 100)}%</span>
                 </div>
               </div>
             </div>
@@ -1159,9 +1208,8 @@ export default function App() {
                   return (
                     <div
                       key={ch.id}
-                      className={`bg-[#111827] border rounded-2xl p-4 sm:p-5 transition-all ${
-                        needsRevision ? 'border-[#F59E0B]/50' : 'border-[#1F2937]'
-                      }`}
+                      className={`bg-[#111827] border rounded-2xl p-4 sm:p-5 transition-all ${needsRevision ? 'border-[#F59E0B]/50' : 'border-[#1F2937]'
+                        }`}
                     >
                       <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
 
@@ -1211,9 +1259,8 @@ export default function App() {
                             <span className="text-xs font-medium text-[#F8FAFC]">Done</span>
                           </label>
 
-                          <label className={`flex items-center gap-2 cursor-pointer px-3 py-1.5 rounded-xl border transition-colors ${
-                            state.done ? 'bg-[#0D1320] border-[#1F2937]' : 'bg-[#0D1320]/50 border-[#1F2937] opacity-40 cursor-not-allowed'
-                          }`}>
+                          <label className={`flex items-center gap-2 cursor-pointer px-3 py-1.5 rounded-xl border transition-colors ${state.done ? 'bg-[#0D1320] border-[#1F2937]' : 'bg-[#0D1320]/50 border-[#1F2937] opacity-40 cursor-not-allowed'
+                            }`}>
                             <input
                               type="checkbox"
                               disabled={!state.done}
@@ -1256,11 +1303,10 @@ export default function App() {
 
                           <button
                             onClick={() => setExpandedNotes(prev => ({ ...prev, [ch.id]: !prev[ch.id] }))}
-                            className={`p-2 rounded-xl border transition-colors cursor-pointer ${
-                              state.notes
+                            className={`p-2 rounded-xl border transition-colors cursor-pointer ${state.notes
                                 ? 'bg-[#FB7185]/10 border-[#FB7185]/30 text-[#FB7185]'
                                 : 'bg-[#0D1320] border-[#1F2937] text-[#64748B] hover:text-[#F8FAFC]'
-                            }`}
+                              }`}
                             title="Study Notes"
                           >
                             <FileText className="w-4 h-4" />
@@ -1463,9 +1509,8 @@ export default function App() {
                 <span className="text-xs text-[#94A3B8]">Sound Chime Notifications</span>
                 <button
                   onClick={() => setPomodoroSettings({ ...pomodoroSettings, soundEnabled: !pomodoroSettings.soundEnabled })}
-                  className={`p-2 rounded-xl border cursor-pointer ${
-                    pomodoroSettings.soundEnabled ? 'bg-[#FB7185]/10 border-[#FB7185]/30 text-[#FB7185]' : 'bg-[#0D1320] border-[#1F2937] text-[#64748B]'
-                  }`}
+                  className={`p-2 rounded-xl border cursor-pointer ${pomodoroSettings.soundEnabled ? 'bg-[#FB7185]/10 border-[#FB7185]/30 text-[#FB7185]' : 'bg-[#0D1320] border-[#1F2937] text-[#64748B]'
+                    }`}
                 >
                   {pomodoroSettings.soundEnabled ? <Volume2 className="w-5 h-5" /> : <VolumeX className="w-5 h-5" />}
                 </button>
