@@ -1,4 +1,4 @@
-export const STUDY_START_DATE = '2026-10-06';
+export const STUDY_START_DATE = '2026-10-15';
 export const EXAM_DATE = '2026-12-12';
 
 const toDate = (dateKey) => {

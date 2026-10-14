@@ -397,18 +397,18 @@ const DhakaClock = () => {
   }, []);
 
   return (
-    <div className="flex items-center gap-3 bg-[#111827] border border-[#1F2937] px-4 py-2.5 rounded-2xl shadow-inner">
-      <div className="p-2 rounded-xl bg-[#FB7185]/10 text-[#FB7185]">
+    <div className="flex items-center gap-3 bg-[#15151C] border border-[#20202A] px-4 py-2.5 rounded-2xl shadow-inner">
+      <div className="p-2 rounded-xl bg-[#D4AF72]/10 text-[#D4AF72]">
         <Clock className="w-5 h-5 animate-pulse" />
       </div>
       <div>
         <div className="flex items-center gap-2">
-          <span className="text-sm sm:text-base font-extrabold tracking-wider font-mono text-[#F8FAFC]">
+          <span className="text-sm sm:text-base font-extrabold tracking-wider font-mono text-[#F5F0E8]">
             {timeState.timeStr}
           </span>
 
         </div>
-        <div className="text-xs text-[#94A3B8]">
+        <div className="text-xs text-[#A6A3A0]">
           {timeState.dayStr}, {timeState.dateStr}
         </div>
       </div>
@@ -439,17 +439,17 @@ const QuoteCard = ({ categoryFilter = null, variant = 'standard' }) => {
 
   if (variant === 'compact') {
     return (
-      <div className="flex items-center justify-between gap-4 p-3.5 rounded-xl bg-[#111827]/80 border border-[#1F2937] text-xs">
+      <div className="flex items-center justify-between gap-4 p-3.5 rounded-xl bg-[#15151C]/80 border border-[#20202A] text-xs">
         <div className="flex items-center gap-2.5 overflow-hidden">
-          <QuoteIcon className="w-4 h-4 text-[#FB7185] shrink-0 italic" />
-          <p className="text-[#94A3B8] italic truncate h-auto">
-            "{currentQuote.text}" — <span className="text-[#F8FAFC] not-italic font-medium">{currentQuote.author}</span>
+          <QuoteIcon className="w-4 h-4 text-[#D4AF72] shrink-0 italic" />
+          <p className="text-[#A6A3A0] italic truncate h-auto">
+            "{currentQuote.text}" — <span className="text-[#F5F0E8] not-italic font-medium">{currentQuote.author}</span>
           </p>
         </div>
         <button
           onClick={nextQuote}
           title="Shuffle quote"
-          className="p-1 cursor-pointer rounded-lg hover:bg-[#1F2937] text-[#64748B] hover:text-[#FB7185] transition-colors shrink-0 focus:outline-none focus:ring-1 focus:ring-[#FB7185]"
+          className="p-1 cursor-pointer rounded-lg hover:bg-[#20202A] text-[#A6A3A0] hover:text-[#D4AF72] transition-colors shrink-0 focus:outline-none focus:ring-1 focus:ring-[#D4AF72]"
         >
           <RefreshCw className="w-3.5 h-3.5" />
         </button>
@@ -458,27 +458,27 @@ const QuoteCard = ({ categoryFilter = null, variant = 'standard' }) => {
   }
 
   return (
-    <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-[#111827] via-[#0D1320] to-[#111827] border border-[#1F2937] p-5 shadow-lg group">
-      <div className="absolute top-0 right-0 transform translate-x-4 -translate-y-4 opacity-5 text-[#FB7185] pointer-events-none">
+    <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-[#15151C] via-[#20202A] to-[#15151C] border border-[#20202A] p-5 shadow-lg group">
+      <div className="absolute top-0 right-0 transform translate-x-4 -translate-y-4 opacity-5 text-[#D4AF72] pointer-events-none">
         <QuoteIcon className="w-32 h-32" />
       </div>
 
       <div className="relative z-10 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div className="flex gap-3.5 items-start">
-          <div className="p-2.5 rounded-xl bg-[#FB7185]/10 text-[#FB7185] shrink-0 mt-0.5">
+          <div className="p-2.5 rounded-xl bg-[#D4AF72]/10 text-[#D4AF72] shrink-0 mt-0.5">
             <Sparkles className="w-5 h-5" />
           </div>
           <div>
             <div className="flex items-center gap-2 mb-1">
-              <span className="text-[10px] font-bold uppercase tracking-wider text-[#FB7185] bg-[#FB7185]/10 px-2 py-0.5 rounded-md">
+              <span className="text-[10px] font-bold uppercase tracking-wider text-[#D4AF72] bg-[#D4AF72]/10 px-2 py-0.5 rounded-md">
                 {currentQuote.category}
               </span>
-              <span className="text-xs text-[#64748B]">Daily Study Inspiration</span>
+              <span className="text-xs text-[#A6A3A0]">Daily Study Inspiration</span>
             </div>
-            <p className="text-[#F8FAFC] text-sm sm:text-base font-medium italic leading-relaxed">
+            <p className="text-[#F5F0E8] text-sm sm:text-base font-medium italic leading-relaxed">
               "{currentQuote.text}"
             </p>
-            <p className="text-xs text-[#94A3B8] mt-1.5 font-semibold not-italic">
+            <p className="text-xs text-[#A6A3A0] mt-1.5 font-semibold not-italic">
               — {currentQuote.author}
             </p>
           </div>
@@ -486,9 +486,9 @@ const QuoteCard = ({ categoryFilter = null, variant = 'standard' }) => {
 
         <button
           onClick={nextQuote}
-          className="cursor-pointer self-end sm:self-center flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#1F2937]/80 hover:bg-[#1F2937] text-xs text-[#94A3B8] hover:text-[#F8FAFC] border border-[#1F2937] transition-all shrink-0 focus:outline-none focus:ring-1 focus:ring-[#FB7185]"
+          className="cursor-pointer self-end sm:self-center flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#20202A]/80 hover:bg-[#20202A] text-xs text-[#A6A3A0] hover:text-[#F5F0E8] border border-[#20202A] transition-all shrink-0 focus:outline-none focus:ring-1 focus:ring-[#D4AF72]"
         >
-          <RefreshCw className="w-3.5 h-3.5 text-[#FB7185]" />
+          <RefreshCw className="w-3.5 h-3.5 text-[#D4AF72]" />
           <span>New Quote</span>
         </button>
       </div>
@@ -522,10 +522,10 @@ const SvgDonutChart = ({ title, data, totalChapters, completedTotal }) => {
   const overallPercentage = Math.round((completedTotal / totalChapters) * 100);
 
   return (
-    <div className="bg-[#111827] border border-[#1F2937] rounded-2xl p-6 shadow-xl flex flex-col justify-between">
+    <div className="bg-[#15151C] border border-[#20202A] rounded-2xl p-6 shadow-xl flex flex-col justify-between">
       <div>
-        <h3 className="text-lg font-bold text-[#F8FAFC] mb-1">{title}</h3>
-        <p className="text-xs text-[#64748B]">Combined 1st & 2nd Paper Breakdown</p>
+        <h3 className="text-lg font-bold text-[#F5F0E8] mb-1">{title}</h3>
+        <p className="text-xs text-[#A6A3A0]">Combined 1st & 2nd Paper Breakdown</p>
       </div>
 
       <div className="relative my-6 flex justify-center items-center">
@@ -535,7 +535,7 @@ const SvgDonutChart = ({ title, data, totalChapters, completedTotal }) => {
             cy="100"
             r={radius}
             fill="transparent"
-            stroke="#1F2937"
+            stroke="#20202A"
             strokeWidth="28"
           />
           {slices.map((slice, idx) => (
@@ -557,29 +557,29 @@ const SvgDonutChart = ({ title, data, totalChapters, completedTotal }) => {
         </svg>
 
         <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
-          <span className="text-3xl font-extrabold text-[#F8FAFC]">{overallPercentage}%</span>
-          <span className="text-xs font-semibold text-[#94A3B8]">
+          <span className="text-3xl font-extrabold text-[#F5F0E8]">{overallPercentage}%</span>
+          <span className="text-xs font-semibold text-[#A6A3A0]">
             {completedTotal} / {totalChapters} PCM
           </span>
         </div>
       </div>
 
-      <div className="space-y-2.5 pt-3 border-t border-[#1F2937]">
+      <div className="space-y-2.5 pt-3 border-t border-[#20202A]">
         {slices.map((slice, idx) => (
           <div
             key={idx}
-            className={`flex items-center justify-between p-2 rounded-xl transition-colors cursor-pointer ${hoveredSlice === idx ? 'bg-[#1F2937]' : ''
+            className={`flex items-center justify-between p-2 rounded-xl transition-colors cursor-pointer ${hoveredSlice === idx ? 'bg-[#20202A]' : ''
               }`}
             onMouseEnter={() => setHoveredSlice(idx)}
             onMouseLeave={() => setHoveredSlice(null)}
           >
             <div className="flex items-center gap-2.5">
               <span className="w-3 h-3 rounded-full shrink-0" style={{ backgroundColor: slice.color }}></span>
-              <span className="text-xs font-medium text-[#F8FAFC]">{slice.name}</span>
+              <span className="text-xs font-medium text-[#F5F0E8]">{slice.name}</span>
             </div>
             <div className="text-right">
-              <span className="text-xs font-bold text-[#F8FAFC]">{slice.count}/{slice.max}</span>
-              <span className="text-[11px] text-[#94A3B8] ml-2">({slice.subjectPercent}%)</span>
+              <span className="text-xs font-bold text-[#F5F0E8]">{slice.count}/{slice.max}</span>
+              <span className="text-[11px] text-[#A6A3A0] ml-2">({slice.subjectPercent}%)</span>
             </div>
           </div>
         ))}
@@ -594,31 +594,31 @@ const ResetModal = ({ isOpen, onClose, onConfirm }) => {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-fadeIn">
-      <div className="bg-[#111827] border border-[#EF4444]/40 p-6 rounded-2xl max-w-md w-full shadow-2xl space-y-4">
+      <div className="bg-[#15151C] border border-[#EF4444]/40 p-6 rounded-2xl max-w-md w-full shadow-2xl space-y-4">
         <div className="flex items-center gap-3 text-[#EF4444]">
           <div className="p-3 rounded-xl bg-[#EF4444]/10">
             <AlertTriangle className="w-6 h-6" />
           </div>
           <div>
-            <h3 className="font-bold text-lg text-[#F8FAFC]">Reset All Progress?</h3>
-            <p className="text-xs text-[#94A3B8]">This action cannot be undone.</p>
+            <h3 className="font-bold text-lg text-[#F5F0E8]">Reset All Progress?</h3>
+            <p className="text-xs text-[#A6A3A0]">This action cannot be undone.</p>
           </div>
         </div>
 
-        <p className="text-xs text-[#94A3B8] leading-relaxed">
+        <p className="text-xs text-[#A6A3A0] leading-relaxed">
           Are you sure you want to clear chapter progress, personal notes, daily study hours, and the active timer? Consider exporting a backup first.
         </p>
 
-        <div className="cursor-pointer flex justify-end gap-3 pt-3 border-t border-[#1F2937]">
+        <div className="cursor-pointer flex justify-end gap-3 pt-3 border-t border-[#20202A]">
           <button
             onClick={onClose}
-            className="px-4 py-2 rounded-xl bg-[#1F2937] text-xs font-semibold text-[#F8FAFC] hover:bg-[#1F2937]/80"
+            className="px-4 py-2 rounded-xl bg-[#20202A] text-xs font-semibold text-[#F5F0E8] hover:bg-[#20202A]/80"
           >
             Cancel
           </button>
           <button
             onClick={onConfirm}
-            className="cursor-pointer px-4 py-2 rounded-xl bg-[#EF4444] text-xs font-semibold text-white hover:bg-[#EF4444]/90 shadow-lg shadow-[#EF4444]/20"
+            className="cursor-pointer px-4 py-2 rounded-xl bg-[#EF4444] text-xs font-semibold text-[#F5F0E8] hover:bg-[#EF4444]/90 shadow-lg shadow-[#EF4444]/20"
           >
             Yes, Reset Everything
           </button>
@@ -858,15 +858,15 @@ export default function App() {
   };
 
   return (
-    <div className="app-shell min-h-screen bg-[#070B14] text-[#F8FAFC] flex flex-col md:flex-row antialiased selection:bg-[#FB7185]/30 selection:text-[#FB7185]">
+    <div className="app-shell min-h-screen bg-[#0B0B0F] text-[#F5F0E8] flex flex-col md:flex-row antialiased selection:bg-[#D4AF72]/30 selection:text-[#D4AF72]">
 
       {/* ========================================== */}
       {/* DESKTOP SIDEBAR NAVIGATION                 */}
       {/* ========================================== */}
-      <aside className="hidden md:flex flex-col w-64 border-r border-[#1F2937] bg-[#0D1320] p-5 shrink-0 justify-between sticky top-0 h-screen">
+      <aside className="hidden md:flex flex-col w-64 border-r border-[#20202A] bg-[#20202A] p-5 shrink-0 justify-between sticky top-0 h-screen">
         <div>
           {/* Logo Header */}
-          <div className="flex items-center justify-center px-2 py-3 mb-6 border-b border-[#1F2937]">
+          <div className="flex items-center justify-center px-2 py-3 mb-6 border-b border-[#20202A]">
             <img
               src="/logoS.png"
               alt="HSC 2026 PCM Study Tracker"
@@ -891,16 +891,16 @@ export default function App() {
                   key={item.id}
                   onClick={() => setActiveTab(item.id)}
                   className={`w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl text-sm font-medium transition-all cursor-pointer ${isActive
-                      ? 'bg-[#111827] text-[#FB7185] border border-[#FB7185]/30 shadow-lg shadow-[#FB7185]/5'
-                      : 'text-[#94A3B8] hover:text-[#F8FAFC] hover:bg-[#111827]/50'
+                      ? 'bg-[#15151C] text-[#D4AF72] border border-[#D4AF72]/30 shadow-lg shadow-[#D4AF72]/5'
+                      : 'text-[#A6A3A0] hover:text-[#F5F0E8] hover:bg-[#15151C]/50'
                     }`}
                 >
                   <div className="flex items-center gap-3">
-                    <Icon className={`w-4 h-4 ${isActive ? 'text-[#FB7185]' : 'text-[#64748B]'}`} />
+                    <Icon className={`w-4 h-4 ${isActive ? 'text-[#D4AF72]' : 'text-[#A6A3A0]'}`} />
                     <span>{item.label}</span>
                   </div>
                   {item.badge && (
-                    <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-[#1F2937] text-[#64748B]">
+                    <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-[#20202A] text-[#A6A3A0]">
                       {item.badge}
                     </span>
                   )}
@@ -915,7 +915,7 @@ export default function App() {
       {/* ========================================== */}
       {/* MOBILE BOTTOM NAVIGATION                   */}
       {/* ========================================== */}
-      <div className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-[#0D1320] border-t border-[#1F2937] px-3 py-2 flex justify-around items-center">
+      <div className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-[#20202A] border-t border-[#20202A] px-3 py-2 flex justify-around items-center">
         {[
           { id: 'dashboard', label: 'Dashboard', icon: LayoutDashboard },
           { id: 'chapters', label: 'Chapters', icon: BookOpen },
@@ -930,7 +930,7 @@ export default function App() {
             <button
               key={item.id}
               onClick={() => setActiveTab(item.id)}
-              className={`cursor-pointer flex flex-col items-center gap-1 p-1.5 rounded-lg text-[11px] font-medium transition-colors ${isActive ? 'text-[#FB7185]' : 'text-[#64748B]'
+              className={`cursor-pointer flex flex-col items-center gap-1 p-1.5 rounded-lg text-[11px] font-medium transition-colors ${isActive ? 'text-[#D4AF72]' : 'text-[#A6A3A0]'
                 }`}
             >
               <Icon className="w-5 h-5" />
@@ -948,10 +948,10 @@ export default function App() {
         {/* TOP HEADER WITH BANGLADESH CLOCK */}
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 mb-6">
           <div>
-            <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight bg-gradient-to-r from-[#FDA4AF] via-[#FB7185] to-[#F97316] bg-clip-text text-transparent">
+            <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight bg-gradient-to-r from-[#D4AF72] via-[#D4AF72] to-[#A98543] bg-clip-text text-transparent">
               HSC 2026 — PCM Study Tracker
             </h1>
-            <p className="text-xs sm:text-sm text-[#94A3B8] mt-1 font-medium">
+            <p className="text-xs sm:text-sm text-[#A6A3A0] mt-1 font-medium">
               Study consistently. Track honestly. Finish strong.
             </p>
           </div>
@@ -968,53 +968,53 @@ export default function App() {
 
             {/* TOP METRICS SUMMARY */}
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4">
-              <div className="bg-[#111827] border border-[#1F2937] p-4 rounded-2xl">
-                <span className="text-xs font-medium text-[#64748B] block mb-1">HSC Progress</span>
+              <div className="bg-[#15151C] border border-[#20202A] p-4 rounded-2xl">
+                <span className="text-xs font-medium text-[#A6A3A0] block mb-1">HSC Progress</span>
                 <div className="flex items-baseline justify-between">
-                  <span className="text-xl sm:text-2xl font-bold text-[#F8FAFC]">
-                    {metrics.totalDone}<span className="text-xs text-[#64748B] font-normal">/50</span>
+                  <span className="text-xl sm:text-2xl font-bold text-[#F5F0E8]">
+                    {metrics.totalDone}<span className="text-xs text-[#A6A3A0] font-normal">/50</span>
                   </span>
-                  <span className="text-xs font-bold text-[#FB7185]">{metrics.overallHscPercent}%</span>
+                  <span className="text-xs font-bold text-[#D4AF72]">{metrics.overallHscPercent}%</span>
                 </div>
               </div>
 
-              <div className="bg-[#111827] border border-[#1F2937] p-4 rounded-2xl">
-                <span className="text-xs font-medium text-[#64748B] block mb-1">Admission Readiness</span>
+              <div className="bg-[#15151C] border border-[#20202A] p-4 rounded-2xl">
+                <span className="text-xs font-medium text-[#A6A3A0] block mb-1">Admission Readiness</span>
                 <div className="flex items-baseline justify-between">
-                  <span className="text-xl sm:text-2xl font-bold text-[#F8FAFC]">
-                    {metrics.totalAdmission}<span className="text-xs text-[#64748B] font-normal">/50</span>
+                  <span className="text-xl sm:text-2xl font-bold text-[#F5F0E8]">
+                    {metrics.totalAdmission}<span className="text-xs text-[#A6A3A0] font-normal">/50</span>
                   </span>
-                  <span className="text-xs font-bold text-[#34D399]">{metrics.overallAdmissionPercent}%</span>
+                  <span className="text-xs font-bold text-[#75B798]">{metrics.overallAdmissionPercent}%</span>
                 </div>
               </div>
 
-              <div className="bg-[#111827] border border-[#1F2937] p-4 rounded-2xl">
-                <span className="text-xs font-medium text-[#64748B] block mb-1">Needs Revision</span>
+              <div className="bg-[#15151C] border border-[#20202A] p-4 rounded-2xl">
+                <span className="text-xs font-medium text-[#A6A3A0] block mb-1">Needs Revision</span>
                 <div className="flex items-baseline justify-between">
-                  <span className="text-xl sm:text-2xl font-bold text-[#F8FAFC]">
+                  <span className="text-xl sm:text-2xl font-bold text-[#F5F0E8]">
                     {metrics.totalNeedsRevision}
                   </span>
-                  <span className="text-xs font-semibold text-[#F59E0B]">Action Needed</span>
+                  <span className="text-xs font-semibold text-[#A98543]">Action Needed</span>
                 </div>
               </div>
 
-              <div className="bg-[#111827] border border-[#1F2937] p-4 rounded-2xl">
-                <span className="text-xs font-medium text-[#64748B] block mb-1">MCQ Practiced</span>
+              <div className="bg-[#15151C] border border-[#20202A] p-4 rounded-2xl">
+                <span className="text-xs font-medium text-[#A6A3A0] block mb-1">MCQ Practiced</span>
                 <div className="flex items-baseline justify-between">
-                  <span className="text-xl sm:text-2xl font-bold text-[#F8FAFC]">
-                    {metrics.totalMcq}<span className="text-xs text-[#64748B] font-normal">/50</span>
+                  <span className="text-xl sm:text-2xl font-bold text-[#F5F0E8]">
+                    {metrics.totalMcq}<span className="text-xs text-[#A6A3A0] font-normal">/50</span>
                   </span>
-                  <span className="text-xs font-semibold text-[#94A3B8]">{Math.round((metrics.totalMcq / 50) * 100)}%</span>
+                  <span className="text-xs font-semibold text-[#A6A3A0]">{Math.round((metrics.totalMcq / 50) * 100)}%</span>
                 </div>
               </div>
 
-              <div className="bg-[#111827] border border-[#1F2937] p-4 rounded-2xl col-span-2 sm:col-span-1">
-                <span className="text-xs font-medium text-[#64748B] block mb-1">CQ Practiced</span>
+              <div className="bg-[#15151C] border border-[#20202A] p-4 rounded-2xl col-span-2 sm:col-span-1">
+                <span className="text-xs font-medium text-[#A6A3A0] block mb-1">CQ Practiced</span>
                 <div className="flex items-baseline justify-between">
-                  <span className="text-xl sm:text-2xl font-bold text-[#F8FAFC]">
-                    {metrics.totalCq}<span className="text-xs text-[#64748B] font-normal">/50</span>
+                  <span className="text-xl sm:text-2xl font-bold text-[#F5F0E8]">
+                    {metrics.totalCq}<span className="text-xs text-[#A6A3A0] font-normal">/50</span>
                   </span>
-                  <span className="text-xs font-semibold text-[#94A3B8]">{Math.round((metrics.totalCq / 50) * 100)}%</span>
+                  <span className="text-xs font-semibold text-[#A6A3A0]">{Math.round((metrics.totalCq / 50) * 100)}%</span>
                 </div>
               </div>
             </div>
@@ -1029,7 +1029,7 @@ export default function App() {
                 return (
                   <div
                     key={key}
-                    className="bg-[#111827] border border-[#1F2937] p-5 rounded-2xl relative overflow-hidden flex flex-col justify-between"
+                    className="bg-[#15151C] border border-[#20202A] p-5 rounded-2xl relative overflow-hidden flex flex-col justify-between"
                   >
                     <div className="w-full h-1 absolute top-0 left-0" style={{ backgroundColor: sub.color }} />
 
@@ -1037,9 +1037,9 @@ export default function App() {
                       <div className="flex items-center justify-between mb-4">
                         <div className="flex items-center gap-2">
                           <span className="w-3 h-3 rounded-full" style={{ backgroundColor: sub.color }} />
-                          <h2 className="font-bold text-lg text-[#F8FAFC]">{sub.name}</h2>
+                          <h2 className="font-bold text-lg text-[#F5F0E8]">{sub.name}</h2>
                         </div>
-                        <span className="text-xs font-mono font-bold px-2 py-0.5 rounded bg-[#1F2937] text-[#94A3B8]">
+                        <span className="text-xs font-mono font-bold px-2 py-0.5 rounded bg-[#20202A] text-[#A6A3A0]">
                           {sub.totalChapters} Ch
                         </span>
                       </div>
@@ -1047,10 +1047,10 @@ export default function App() {
                       <div className="space-y-4">
                         <div>
                           <div className="flex justify-between text-xs mb-1.5">
-                            <span className="text-[#94A3B8]">HSC Syllabus Completion</span>
-                            <span className="font-bold text-[#F8FAFC]">{subData.done} / {sub.totalChapters} ({hscPct}%)</span>
+                            <span className="text-[#A6A3A0]">HSC Syllabus Completion</span>
+                            <span className="font-bold text-[#F5F0E8]">{subData.done} / {sub.totalChapters} ({hscPct}%)</span>
                           </div>
-                          <div className="w-full h-2 rounded-full bg-[#1F2937] overflow-hidden">
+                          <div className="w-full h-2 rounded-full bg-[#20202A] overflow-hidden">
                             <div
                               className="h-full rounded-full transition-all duration-500"
                               style={{ width: `${hscPct}%`, backgroundColor: sub.color }}
@@ -1060,10 +1060,10 @@ export default function App() {
 
                         <div>
                           <div className="flex justify-between text-xs mb-1.5">
-                            <span className="text-[#94A3B8]">Admission Readiness</span>
-                            <span className="font-bold text-[#F8FAFC]">{subData.admission} / {sub.totalChapters} ({admPct}%)</span>
+                            <span className="text-[#A6A3A0]">Admission Readiness</span>
+                            <span className="font-bold text-[#F5F0E8]">{subData.admission} / {sub.totalChapters} ({admPct}%)</span>
                           </div>
-                          <div className="w-full h-2 rounded-full bg-[#1F2937] overflow-hidden">
+                          <div className="w-full h-2 rounded-full bg-[#20202A] overflow-hidden">
                             <div
                               className="h-full rounded-full transition-all duration-500 opacity-80"
                               style={{ width: `${admPct}%`, backgroundColor: sub.color }}
@@ -1073,10 +1073,10 @@ export default function App() {
                       </div>
                     </div>
 
-                    <div className="mt-5 pt-3 border-t border-[#1F2937] flex justify-between text-xs text-[#64748B]">
-                      <span>MCQ: <strong className="text-[#F8FAFC]">{subData.mcq}</strong></span>
-                      <span>CQ: <strong className="text-[#F8FAFC]">{subData.cq}</strong></span>
-                      <span>Revision: <strong className="text-[#F59E0B]">{subData.revisionNeeded}</strong></span>
+                    <div className="mt-5 pt-3 border-t border-[#20202A] flex justify-between text-xs text-[#A6A3A0]">
+                      <span>MCQ: <strong className="text-[#F5F0E8]">{subData.mcq}</strong></span>
+                      <span>CQ: <strong className="text-[#F5F0E8]">{subData.cq}</strong></span>
+                      <span>Revision: <strong className="text-[#A98543]">{subData.revisionNeeded}</strong></span>
                     </div>
                   </div>
                 );
@@ -1118,40 +1118,40 @@ export default function App() {
           <div className="space-y-6">
 
             {/* CONTROL PANEL */}
-            <div className="bg-[#111827] border border-[#1F2937] p-4 sm:p-5 rounded-2xl space-y-4">
+            <div className="bg-[#15151C] border border-[#20202A] p-4 sm:p-5 rounded-2xl space-y-4">
               <div className="flex flex-col sm:flex-row gap-3 justify-between items-stretch">
                 <div className="relative flex-1">
-                  <Search className="w-4 h-4 text-[#64748B] absolute left-3.5 top-1/2 transform -translate-y-1/2" />
+                  <Search className="w-4 h-4 text-[#A6A3A0] absolute left-3.5 top-1/2 transform -translate-y-1/2" />
                   <input
                     type="text"
                     placeholder="Search chapter in Bangla, English or chapter number..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className="w-full bg-[#0D1320] border border-[#1F2937] text-sm text-[#F8FAFC] pl-10 pr-4 py-2.5 rounded-xl focus:outline-none focus:border-[#FB7185]"
+                    className="w-full bg-[#20202A] border border-[#20202A] text-sm text-[#F5F0E8] pl-10 pr-4 py-2.5 rounded-xl focus:outline-none focus:border-[#D4AF72]"
                   />
                   {searchQuery && (
                     <button
                       onClick={() => setSearchQuery('')}
-                      className="cursor-pointer absolute right-3 top-1/2 transform -translate-y-1/2 text-xs text-[#64748B] hover:text-[#F8FAFC]"
+                      className="cursor-pointer absolute right-3 top-1/2 transform -translate-y-1/2 text-xs text-[#A6A3A0] hover:text-[#F5F0E8]"
                     >
                       Clear
                     </button>
                   )}
                 </div>
 
-                <div className="flex items-center gap-2 self-end text-xs text-[#94A3B8]">
-                  <span>Showing: <strong className="text-[#F8FAFC]">{filteredChapters.length}</strong> / 50 Chapters</span>
+                <div className="flex items-center gap-2 self-end text-xs text-[#A6A3A0]">
+                  <span>Showing: <strong className="text-[#F5F0E8]">{filteredChapters.length}</strong> / 50 Chapters</span>
                 </div>
               </div>
 
               {/* FILTER SELECTORS */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2 border-t border-[#1F2937]">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2 border-t border-[#20202A]">
                 <div>
-                  <label className="text-[11px] font-bold text-[#64748B] block mb-1 uppercase tracking-wider">Subject</label>
+                  <label className="text-[11px] font-bold text-[#A6A3A0] block mb-1 uppercase tracking-wider">Subject</label>
                   <select
                     value={subjectFilter}
                     onChange={(e) => setSubjectFilter(e.target.value)}
-                    className="w-full bg-[#0D1320] border border-[#1F2937] text-xs text-[#F8FAFC] px-3 py-2 rounded-xl focus:outline-none focus:border-[#FB7185]"
+                    className="w-full bg-[#20202A] border border-[#20202A] text-xs text-[#F5F0E8] px-3 py-2 rounded-xl focus:outline-none focus:border-[#D4AF72]"
                   >
                     <option value="All">All Subjects (Physics, Chem, Math)</option>
                     <option value="Physics">Physics Only</option>
@@ -1161,11 +1161,11 @@ export default function App() {
                 </div>
 
                 <div>
-                  <label className="text-[11px] font-bold text-[#64748B] block mb-1 uppercase tracking-wider">Paper</label>
+                  <label className="text-[11px] font-bold text-[#A6A3A0] block mb-1 uppercase tracking-wider">Paper</label>
                   <select
                     value={paperFilter}
                     onChange={(e) => setPaperFilter(e.target.value)}
-                    className="w-full bg-[#0D1320] border border-[#1F2937] text-xs text-[#F8FAFC] px-3 py-2 rounded-xl focus:outline-none focus:border-[#FB7185]"
+                    className="w-full bg-[#20202A] border border-[#20202A] text-xs text-[#F5F0E8] px-3 py-2 rounded-xl focus:outline-none focus:border-[#D4AF72]"
                   >
                     <option value="All">Both Papers (1st & 2nd)</option>
                     <option value="1st">1st Paper Only</option>
@@ -1174,11 +1174,11 @@ export default function App() {
                 </div>
 
                 <div>
-                  <label className="text-[11px] font-bold text-[#64748B] block mb-1 uppercase tracking-wider">Status</label>
+                  <label className="text-[11px] font-bold text-[#A6A3A0] block mb-1 uppercase tracking-wider">Status</label>
                   <select
                     value={statusFilter}
                     onChange={(e) => setStatusFilter(e.target.value)}
-                    className="w-full bg-[#0D1320] border border-[#1F2937] text-xs text-[#F8FAFC] px-3 py-2 rounded-xl focus:outline-none focus:border-[#FB7185]"
+                    className="w-full bg-[#20202A] border border-[#20202A] text-xs text-[#F5F0E8] px-3 py-2 rounded-xl focus:outline-none focus:border-[#D4AF72]"
                   >
                     <option value="All">All Statuses</option>
                     <option value="Done">Completed (Done)</option>
@@ -1193,22 +1193,22 @@ export default function App() {
             {/* CHAPTER CARDS */}
             <div className="space-y-3">
               {filteredChapters.length === 0 ? (
-                <div className="text-center py-12 bg-[#111827] border border-[#1F2937] rounded-2xl">
-                  <BookOpen className="w-10 h-10 text-[#64748B] mx-auto mb-3 opacity-50" />
-                  <p className="text-sm font-semibold text-[#F8FAFC]">No matching chapters found</p>
-                  <p className="text-xs text-[#64748B] mt-1">Try resetting your filter or search query</p>
+                <div className="text-center py-12 bg-[#15151C] border border-[#20202A] rounded-2xl">
+                  <BookOpen className="w-10 h-10 text-[#A6A3A0] mx-auto mb-3 opacity-50" />
+                  <p className="text-sm font-semibold text-[#F5F0E8]">No matching chapters found</p>
+                  <p className="text-xs text-[#A6A3A0] mt-1">Try resetting your filter or search query</p>
                 </div>
               ) : (
                 filteredChapters.map(ch => {
                   const state = trackerData[ch.id] || INITIAL_CHAPTER_STATE;
                   const needsRevision = state.done && !state.revisionNotNeeded;
-                  const subColor = SUBJECTS[ch.subject === 'Higher Mathematics' ? 'HIGHER_MATH' : ch.subject.toUpperCase()]?.color || '#FB7185';
+                  const subColor = SUBJECTS[ch.subject === 'Higher Mathematics' ? 'HIGHER_MATH' : ch.subject.toUpperCase()]?.color || '#D4AF72';
                   const isNotesOpen = expandedNotes[ch.id];
 
                   return (
                     <div
                       key={ch.id}
-                      className={`bg-[#111827] border rounded-2xl p-4 sm:p-5 transition-all ${needsRevision ? 'border-[#F59E0B]/50' : 'border-[#1F2937]'
+                      className={`bg-[#15151C] border rounded-2xl p-4 sm:p-5 transition-all ${needsRevision ? 'border-[#A98543]/50' : 'border-[#20202A]'
                         }`}
                     >
                       <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
@@ -1223,22 +1223,22 @@ export default function App() {
                           </span>
                           <div>
                             <div className="flex items-center gap-2 flex-wrap">
-                              <h3 className="font-bold text-base text-[#F8FAFC]">{ch.titleBn}</h3>
-                              <span className="text-xs text-[#64748B]">({ch.titleEn})</span>
+                              <h3 className="font-bold text-base text-[#F5F0E8]">{ch.titleBn}</h3>
+                              <span className="text-xs text-[#A6A3A0]">({ch.titleEn})</span>
                             </div>
 
-                            <div className="flex items-center gap-2 mt-1.5 text-xs text-[#94A3B8]">
+                            <div className="flex items-center gap-2 mt-1.5 text-xs text-[#A6A3A0]">
                               <span style={{ color: subColor }} className="font-semibold">{ch.subject}</span>
                               <span>•</span>
                               <span>{ch.paper} Paper</span>
 
                               {needsRevision && (
-                                <span className="bg-[#F59E0B]/10 text-[#F59E0B] border border-[#F59E0B]/30 px-2 py-0.5 rounded text-[10px] font-bold">
+                                <span className="bg-[#A98543]/10 text-[#A98543] border border-[#A98543]/30 px-2 py-0.5 rounded text-[10px] font-bold">
                                   Needs Revision
                                 </span>
                               )}
                               {state.admissionReady && (
-                                <span className="bg-[#34D399]/10 text-[#34D399] border border-[#34D399]/30 px-2 py-0.5 rounded text-[10px] font-bold">
+                                <span className="bg-[#75B798]/10 text-[#75B798] border border-[#75B798]/30 px-2 py-0.5 rounded text-[10px] font-bold">
                                   Admission Ready
                                 </span>
                               )}
@@ -1247,65 +1247,65 @@ export default function App() {
                         </div>
 
                         {/* Tracker Controls */}
-                        <div className="flex items-center gap-2.5 flex-wrap sm:flex-nowrap pt-2 lg:pt-0 border-t lg:border-t-0 border-[#1F2937]">
+                        <div className="flex items-center gap-2.5 flex-wrap sm:flex-nowrap pt-2 lg:pt-0 border-t lg:border-t-0 border-[#20202A]">
 
-                          <label className="flex items-center gap-2 cursor-pointer bg-[#0D1320] px-3 py-1.5 rounded-xl border border-[#1F2937] hover:border-[#FB7185]/50">
+                          <label className="flex items-center gap-2 cursor-pointer bg-[#20202A] px-3 py-1.5 rounded-xl border border-[#20202A] hover:border-[#D4AF72]/50">
                             <input
                               type="checkbox"
                               checked={state.done}
                               onChange={() => toggleCheckbox(ch.id, 'done')}
-                              className="w-4 h-4 rounded accent-[#FB7185]"
+                              className="w-4 h-4 rounded accent-[#D4AF72]"
                             />
-                            <span className="text-xs font-medium text-[#F8FAFC]">Done</span>
+                            <span className="text-xs font-medium text-[#F5F0E8]">Done</span>
                           </label>
 
-                          <label className={`flex items-center gap-2 cursor-pointer px-3 py-1.5 rounded-xl border transition-colors ${state.done ? 'bg-[#0D1320] border-[#1F2937]' : 'bg-[#0D1320]/50 border-[#1F2937] opacity-40 cursor-not-allowed'
+                          <label className={`flex items-center gap-2 cursor-pointer px-3 py-1.5 rounded-xl border transition-colors ${state.done ? 'bg-[#20202A] border-[#20202A]' : 'bg-[#20202A]/50 border-[#20202A] opacity-40 cursor-not-allowed'
                             }`}>
                             <input
                               type="checkbox"
                               disabled={!state.done}
                               checked={state.revisionNotNeeded}
                               onChange={() => toggleCheckbox(ch.id, 'revisionNotNeeded')}
-                              className="w-4 h-4 rounded accent-[#34D399]"
+                              className="w-4 h-4 rounded accent-[#75B798]"
                             />
-                            <span className="text-xs font-medium text-[#F8FAFC]">No Rev</span>
+                            <span className="text-xs font-medium text-[#F5F0E8]">No Rev</span>
                           </label>
 
-                          <label className="flex items-center gap-2 cursor-pointer bg-[#0D1320] px-3 py-1.5 rounded-xl border border-[#1F2937]">
+                          <label className="flex items-center gap-2 cursor-pointer bg-[#20202A] px-3 py-1.5 rounded-xl border border-[#20202A]">
                             <input
                               type="checkbox"
                               checked={state.mcqDone}
                               onChange={() => toggleCheckbox(ch.id, 'mcqDone')}
-                              className="w-4 h-4 rounded accent-[#A78BFA]"
+                              className="w-4 h-4 rounded accent-[#A98543]"
                             />
-                            <span className="text-xs font-medium text-[#94A3B8]">MCQ</span>
+                            <span className="text-xs font-medium text-[#A6A3A0]">MCQ</span>
                           </label>
 
-                          <label className="flex items-center gap-2 cursor-pointer bg-[#0D1320] px-3 py-1.5 rounded-xl border border-[#1F2937]">
+                          <label className="flex items-center gap-2 cursor-pointer bg-[#20202A] px-3 py-1.5 rounded-xl border border-[#20202A]">
                             <input
                               type="checkbox"
                               checked={state.cqDone}
                               onChange={() => toggleCheckbox(ch.id, 'cqDone')}
-                              className="w-4 h-4 rounded accent-[#A78BFA]"
+                              className="w-4 h-4 rounded accent-[#A98543]"
                             />
-                            <span className="text-xs font-medium text-[#94A3B8]">CQ</span>
+                            <span className="text-xs font-medium text-[#A6A3A0]">CQ</span>
                           </label>
 
-                          <label className="flex items-center gap-2 cursor-pointer bg-[#0D1320] px-3 py-1.5 rounded-xl border border-[#1F2937]">
+                          <label className="flex items-center gap-2 cursor-pointer bg-[#20202A] px-3 py-1.5 rounded-xl border border-[#20202A]">
                             <input
                               type="checkbox"
                               checked={state.admissionReady}
                               onChange={() => toggleCheckbox(ch.id, 'admissionReady')}
-                              className="w-4 h-4 rounded accent-[#34D399]"
+                              className="w-4 h-4 rounded accent-[#75B798]"
                             />
-                            <span className="text-xs font-medium text-[#34D399]">Admission</span>
+                            <span className="text-xs font-medium text-[#75B798]">Admission</span>
                           </label>
 
                           <button
                             onClick={() => setExpandedNotes(prev => ({ ...prev, [ch.id]: !prev[ch.id] }))}
                             className={`p-2 rounded-xl border transition-colors cursor-pointer ${state.notes
-                                ? 'bg-[#FB7185]/10 border-[#FB7185]/30 text-[#FB7185]'
-                                : 'bg-[#0D1320] border-[#1F2937] text-[#64748B] hover:text-[#F8FAFC]'
+                                ? 'bg-[#D4AF72]/10 border-[#D4AF72]/30 text-[#D4AF72]'
+                                : 'bg-[#20202A] border-[#20202A] text-[#A6A3A0] hover:text-[#F5F0E8]'
                               }`}
                             title="Study Notes"
                           >
@@ -1317,8 +1317,8 @@ export default function App() {
 
                       {/* Notes Drawer */}
                       {isNotesOpen && (
-                        <div className="mt-4 pt-3 border-t border-[#1F2937]">
-                          <label className="text-xs font-semibold text-[#94A3B8] block mb-1.5">
+                        <div className="mt-4 pt-3 border-t border-[#20202A]">
+                          <label className="text-xs font-semibold text-[#A6A3A0] block mb-1.5">
                             Personal Study Notes & Formula Drawer
                           </label>
                           <textarea
@@ -1326,7 +1326,7 @@ export default function App() {
                             value={state.notes || ''}
                             onChange={(e) => handleNoteChange(ch.id, e.target.value)}
                             placeholder="Write important formulas, weak areas, or key problems here..."
-                            className="w-full bg-[#0D1320] border border-[#1F2937] text-xs text-[#F8FAFC] p-3 rounded-xl focus:outline-none focus:border-[#FB7185]"
+                            className="w-full bg-[#20202A] border border-[#20202A] text-xs text-[#F5F0E8] p-3 rounded-xl focus:outline-none focus:border-[#D4AF72]"
                           />
                         </div>
                       )}
@@ -1372,12 +1372,12 @@ export default function App() {
             </div>
 
             {/* DETAILED METRICS TABLE */}
-            <div className="bg-[#111827] border border-[#1F2937] rounded-2xl p-6">
-              <h3 className="font-bold text-lg text-[#F8FAFC] mb-4">Subject-wise Performance Breakdown</h3>
+            <div className="bg-[#15151C] border border-[#20202A] rounded-2xl p-6">
+              <h3 className="font-bold text-lg text-[#F5F0E8] mb-4">Subject-wise Performance Breakdown</h3>
 
               <div className="overflow-x-auto">
-                <table className="w-full text-left text-xs text-[#94A3B8]">
-                  <thead className="bg-[#0D1320] text-[#64748B] uppercase font-bold tracking-wider">
+                <table className="w-full text-left text-xs text-[#A6A3A0]">
+                  <thead className="bg-[#20202A] text-[#A6A3A0] uppercase font-bold tracking-wider">
                     <tr>
                       <th className="p-3 rounded-l-xl">Subject</th>
                       <th className="p-3">HSC Completion</th>
@@ -1387,20 +1387,20 @@ export default function App() {
                       <th className="p-3 rounded-r-xl">Needs Revision</th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-[#1F2937]">
+                  <tbody className="divide-y divide-[#20202A]">
                     {Object.entries(SUBJECTS).map(([key, sub]) => {
                       const data = metrics.subjects[sub.name];
                       return (
-                        <tr key={key} className="hover:bg-[#0D1320]/50 transition-colors">
-                          <td className="p-3 font-bold text-[#F8FAFC] flex items-center gap-2">
+                        <tr key={key} className="hover:bg-[#20202A]/50 transition-colors">
+                          <td className="p-3 font-bold text-[#F5F0E8] flex items-center gap-2">
                             <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: sub.color }} />
                             {sub.name}
                           </td>
-                          <td className="p-3 text-[#F8FAFC] font-semibold">{data.done} / {sub.totalChapters}</td>
-                          <td className="p-3 text-[#34D399] font-semibold">{data.admission} / {sub.totalChapters}</td>
-                          <td className="p-3 text-[#F8FAFC]">{data.mcq} / {sub.totalChapters}</td>
-                          <td className="p-3 text-[#F8FAFC]">{data.cq} / {sub.totalChapters}</td>
-                          <td className="p-3 text-[#F59E0B] font-bold">{data.revisionNeeded}</td>
+                          <td className="p-3 text-[#F5F0E8] font-semibold">{data.done} / {sub.totalChapters}</td>
+                          <td className="p-3 text-[#75B798] font-semibold">{data.admission} / {sub.totalChapters}</td>
+                          <td className="p-3 text-[#F5F0E8]">{data.mcq} / {sub.totalChapters}</td>
+                          <td className="p-3 text-[#F5F0E8]">{data.cq} / {sub.totalChapters}</td>
+                          <td className="p-3 text-[#A98543] font-bold">{data.revisionNeeded}</td>
                         </tr>
                       );
                     })}
@@ -1445,15 +1445,15 @@ export default function App() {
             <QuoteCard categoryFilter={null} />
 
             {/* TIMER CONFIGURATION */}
-            <div className="bg-[#111827] border border-[#1F2937] rounded-2xl p-6">
-              <h3 className="font-bold text-lg text-[#F8FAFC] mb-4 flex items-center gap-2">
-                <Timer className="w-5 h-5 text-[#FB7185]" />
+            <div className="bg-[#15151C] border border-[#20202A] rounded-2xl p-6">
+              <h3 className="font-bold text-lg text-[#F5F0E8] mb-4 flex items-center gap-2">
+                <Timer className="w-5 h-5 text-[#D4AF72]" />
                 Pomodoro Timer Preferences
               </h3>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label htmlFor="focus-duration" className="text-xs text-[#94A3B8] block mb-1">Focus Duration (minutes)</label>
+                  <label htmlFor="focus-duration" className="text-xs text-[#A6A3A0] block mb-1">Focus Duration (minutes)</label>
                   <input
                     id="focus-duration"
                     type="number"
@@ -1461,12 +1461,12 @@ export default function App() {
                     max="120"
                     value={pomodoroSettings.focusTime}
                     onChange={(e) => setPomodoroSettings({ ...pomodoroSettings, focusTime: parseInt(e.target.value) || 25 })}
-                    className="w-full bg-[#0D1320] border border-[#1F2937] text-sm text-[#F8FAFC] p-2.5 rounded-xl focus:outline-none focus:border-[#FB7185]"
+                    className="w-full bg-[#20202A] border border-[#20202A] text-sm text-[#F5F0E8] p-2.5 rounded-xl focus:outline-none focus:border-[#D4AF72]"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="short-break-duration" className="text-xs text-[#94A3B8] block mb-1">Short Break (minutes)</label>
+                  <label htmlFor="short-break-duration" className="text-xs text-[#A6A3A0] block mb-1">Short Break (minutes)</label>
                   <input
                     id="short-break-duration"
                     type="number"
@@ -1474,12 +1474,12 @@ export default function App() {
                     max="60"
                     value={pomodoroSettings.shortBreakTime}
                     onChange={(e) => setPomodoroSettings({ ...pomodoroSettings, shortBreakTime: parseInt(e.target.value) || 5 })}
-                    className="w-full bg-[#0D1320] border border-[#1F2937] text-sm text-[#F8FAFC] p-2.5 rounded-xl focus:outline-none focus:border-[#FB7185]"
+                    className="w-full bg-[#20202A] border border-[#20202A] text-sm text-[#F5F0E8] p-2.5 rounded-xl focus:outline-none focus:border-[#D4AF72]"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="long-break-duration" className="text-xs text-[#94A3B8] block mb-1">Long Break (minutes)</label>
+                  <label htmlFor="long-break-duration" className="text-xs text-[#A6A3A0] block mb-1">Long Break (minutes)</label>
                   <input
                     id="long-break-duration"
                     type="number"
@@ -1487,12 +1487,12 @@ export default function App() {
                     max="90"
                     value={pomodoroSettings.longBreakTime}
                     onChange={(e) => setPomodoroSettings({ ...pomodoroSettings, longBreakTime: parseInt(e.target.value) || 15 })}
-                    className="w-full bg-[#0D1320] border border-[#1F2937] text-sm text-[#F8FAFC] p-2.5 rounded-xl focus:outline-none focus:border-[#FB7185]"
+                    className="w-full bg-[#20202A] border border-[#20202A] text-sm text-[#F5F0E8] p-2.5 rounded-xl focus:outline-none focus:border-[#D4AF72]"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="long-break-interval" className="text-xs text-[#94A3B8] block mb-1">Long Break Interval (sessions)</label>
+                  <label htmlFor="long-break-interval" className="text-xs text-[#A6A3A0] block mb-1">Long Break Interval (sessions)</label>
                   <input
                     id="long-break-interval"
                     type="number"
@@ -1500,16 +1500,16 @@ export default function App() {
                     max="10"
                     value={pomodoroSettings.longBreakInterval}
                     onChange={(e) => setPomodoroSettings({ ...pomodoroSettings, longBreakInterval: parseInt(e.target.value) || 4 })}
-                    className="w-full bg-[#0D1320] border border-[#1F2937] text-sm text-[#F8FAFC] p-2.5 rounded-xl focus:outline-none focus:border-[#FB7185]"
+                    className="w-full bg-[#20202A] border border-[#20202A] text-sm text-[#F5F0E8] p-2.5 rounded-xl focus:outline-none focus:border-[#D4AF72]"
                   />
                 </div>
               </div>
 
-              <div className="mt-4 pt-4 border-t border-[#1F2937] flex items-center justify-between">
-                <span className="text-xs text-[#94A3B8]">Sound Chime Notifications</span>
+              <div className="mt-4 pt-4 border-t border-[#20202A] flex items-center justify-between">
+                <span className="text-xs text-[#A6A3A0]">Sound Chime Notifications</span>
                 <button
                   onClick={() => setPomodoroSettings({ ...pomodoroSettings, soundEnabled: !pomodoroSettings.soundEnabled })}
-                  className={`p-2 rounded-xl border cursor-pointer ${pomodoroSettings.soundEnabled ? 'bg-[#FB7185]/10 border-[#FB7185]/30 text-[#FB7185]' : 'bg-[#0D1320] border-[#1F2937] text-[#64748B]'
+                  className={`p-2 rounded-xl border cursor-pointer ${pomodoroSettings.soundEnabled ? 'bg-[#D4AF72]/10 border-[#D4AF72]/30 text-[#D4AF72]' : 'bg-[#20202A] border-[#20202A] text-[#A6A3A0]'
                     }`}
                 >
                   {pomodoroSettings.soundEnabled ? <Volume2 className="w-5 h-5" /> : <VolumeX className="w-5 h-5" />}
@@ -1518,38 +1518,38 @@ export default function App() {
             </div>
 
             {/* BACKUP & RESTORE */}
-            <div className="bg-[#111827] border border-[#1F2937] rounded-2xl p-6">
-              <h3 className="font-bold text-lg text-[#F8FAFC] mb-4 flex items-center gap-2">
-                <Download className="w-5 h-5 text-[#34D399]" />
+            <div className="bg-[#15151C] border border-[#20202A] rounded-2xl p-6">
+              <h3 className="font-bold text-lg text-[#F5F0E8] mb-4 flex items-center gap-2">
+                <Download className="w-5 h-5 text-[#75B798]" />
                 Backup & Data Synchronization
               </h3>
 
               <div className="flex flex-col sm:flex-row gap-3">
                 <button
                   onClick={handleExportData}
-                  className="cursor-pointer flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-[#0D1320] border border-[#1F2937] hover:border-[#34D399] text-sm font-semibold text-[#F8FAFC] transition-colors"
+                  className="cursor-pointer flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-[#20202A] border border-[#20202A] hover:border-[#75B798] text-sm font-semibold text-[#F5F0E8] transition-colors"
                 >
-                  <Download className="w-4 h-4 text-[#34D399]" />
+                  <Download className="w-4 h-4 text-[#75B798]" />
                   <span>Export Progress JSON</span>
                 </button>
 
-                <label className="flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-[#0D1320] border border-[#1F2937] hover:border-[#FB7185] text-sm font-semibold text-[#F8FAFC] cursor-pointer transition-colors">
-                  <Upload className="w-4 h-4 text-[#FB7185]" />
+                <label className="flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-[#20202A] border border-[#20202A] hover:border-[#D4AF72] text-sm font-semibold text-[#F5F0E8] cursor-pointer transition-colors">
+                  <Upload className="w-4 h-4 text-[#D4AF72]" />
                   <span>Import Progress JSON</span>
                   <input type="file" accept=".json" onChange={handleImportData} className="hidden" />
                 </label>
               </div>
 
               {/* RESET SECTION */}
-              <div className="mt-6 pt-6 border-t border-[#1F2937]">
+              <div className="mt-6 pt-6 border-t border-[#20202A]">
                 <div className="flex items-center justify-between">
                   <div>
                     <h4 className="text-sm font-bold text-[#EF4444]">Reset All Study Progress</h4>
-                    <p className="text-xs text-[#64748B]">Wipe all checkboxes and notes stored in local storage.</p>
+                    <p className="text-xs text-[#A6A3A0]">Wipe all checkboxes and notes stored in local storage.</p>
                   </div>
                   <button
                     onClick={() => setIsResetModalOpen(true)}
-                    className="cursor-pointer px-4 py-2 rounded-xl bg-[#EF4444]/10 border border-[#EF4444]/30 text-[#EF4444] hover:bg-[#EF4444] hover:text-white transition-all text-xs font-bold"
+                    className="cursor-pointer px-4 py-2 rounded-xl bg-[#EF4444]/10 border border-[#EF4444]/30 text-[#EF4444] hover:bg-[#EF4444] hover:text-[#F5F0E8] transition-all text-xs font-bold"
                   >
                     Reset All Data
                   </button>
