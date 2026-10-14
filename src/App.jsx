@@ -21,6 +21,7 @@ import {
 } from 'lucide-react';
 import DailyStudyHours from './DailyStudyHours.jsx';
 import StudyTimer from './StudyTimer.jsx';
+import ProgressRing from './ProgressRing.jsx';
 import { EXAM_DATE, STUDY_START_DATE, toDateKey } from './studyHours.js';
 
 // ==========================================
@@ -399,7 +400,7 @@ const DhakaClock = () => {
   return (
     <div className="flex items-center gap-3 bg-[#15151C] border border-[#20202A] px-4 py-2.5 rounded-2xl shadow-inner">
       <div className="p-2 rounded-xl bg-[#D4AF72]/10 text-[#D4AF72]">
-        <Clock className="w-5 h-5 animate-pulse" />
+        <Clock className="w-5 h-5" />
       </div>
       <div>
         <div className="flex items-center gap-2">
@@ -522,7 +523,7 @@ const SvgDonutChart = ({ title, data, totalChapters, completedTotal }) => {
   const overallPercentage = Math.round((completedTotal / totalChapters) * 100);
 
   return (
-    <div className="bg-[#15151C] border border-[#20202A] rounded-2xl p-6 shadow-xl flex flex-col justify-between">
+    <div className="interactive-surface bg-[#15151C] border border-[#20202A] rounded-2xl p-6 shadow-xl flex flex-col justify-between">
       <div>
         <h3 className="text-lg font-bold text-[#F5F0E8] mb-1">{title}</h3>
         <p className="text-xs text-[#A6A3A0]">Combined 1st & 2nd Paper Breakdown</p>
@@ -870,7 +871,7 @@ export default function App() {
             <img
               src="/logoS.png"
               alt="HSC 2026 PCM Study Tracker"
-              className="h-16 w-auto object-contain drop-shadow-[0_0_18px_rgba(251,113,133,0.35)]"
+              className="h-16 w-auto object-contain drop-shadow-[0_0_14px_rgba(212,175,114,0.16)]"
             />
           </div>
 
@@ -943,7 +944,7 @@ export default function App() {
       {/* ========================================== */}
       {/* MAIN VIEWPORT                              */}
       {/* ========================================== */}
-      <main className="flex-1 p-4 sm:p-8 max-w-7xl mx-auto w-full pb-24 md:pb-8 overflow-y-auto">
+      <main className="page-enter flex-1 p-4 sm:p-8 max-w-7xl mx-auto w-full pb-24 md:pb-8 overflow-y-auto">
 
         {/* TOP HEADER WITH BANGLADESH CLOCK */}
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 mb-6">
@@ -970,21 +971,29 @@ export default function App() {
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4">
               <div className="bg-[#15151C] border border-[#20202A] p-4 rounded-2xl">
                 <span className="text-xs font-medium text-[#A6A3A0] block mb-1">HSC Progress</span>
-                <div className="flex items-baseline justify-between">
+                <div className="flex items-center justify-between gap-2">
                   <span className="text-xl sm:text-2xl font-bold text-[#F5F0E8]">
                     {metrics.totalDone}<span className="text-xs text-[#A6A3A0] font-normal">/50</span>
                   </span>
-                  <span className="text-xs font-bold text-[#D4AF72]">{metrics.overallHscPercent}%</span>
+                  <ProgressRing
+                    value={metrics.overallHscPercent}
+                    color="#D4AF72"
+                    label="HSC progress"
+                  />
                 </div>
               </div>
 
               <div className="bg-[#15151C] border border-[#20202A] p-4 rounded-2xl">
                 <span className="text-xs font-medium text-[#A6A3A0] block mb-1">Admission Readiness</span>
-                <div className="flex items-baseline justify-between">
+                <div className="flex items-center justify-between gap-2">
                   <span className="text-xl sm:text-2xl font-bold text-[#F5F0E8]">
                     {metrics.totalAdmission}<span className="text-xs text-[#A6A3A0] font-normal">/50</span>
                   </span>
-                  <span className="text-xs font-bold text-[#75B798]">{metrics.overallAdmissionPercent}%</span>
+                  <ProgressRing
+                    value={metrics.overallAdmissionPercent}
+                    color="#75B798"
+                    label="Admission readiness"
+                  />
                 </div>
               </div>
 
@@ -1039,9 +1048,16 @@ export default function App() {
                           <span className="w-3 h-3 rounded-full" style={{ backgroundColor: sub.color }} />
                           <h2 className="font-bold text-lg text-[#F5F0E8]">{sub.name}</h2>
                         </div>
-                        <span className="text-xs font-mono font-bold px-2 py-0.5 rounded bg-[#20202A] text-[#A6A3A0]">
-                          {sub.totalChapters} Ch
-                        </span>
+                        <div className="flex items-center gap-2">
+                          <span className="text-xs font-mono font-bold px-2 py-0.5 rounded bg-[#20202A] text-[#A6A3A0]">
+                            {sub.totalChapters} Ch
+                          </span>
+                          <ProgressRing
+                            value={hscPct}
+                            color={sub.color}
+                            label={`${sub.name} syllabus completion`}
+                          />
+                        </div>
                       </div>
 
                       <div className="space-y-4">
@@ -1115,7 +1131,7 @@ export default function App() {
         {/* VIEW 2: CHAPTER TRACKER                    */}
         {/* ========================================== */}
         {activeTab === 'chapters' && (
-          <div className="space-y-6">
+          <div className="space-y-6 dashboard-enter">
 
             {/* CONTROL PANEL */}
             <div className="bg-[#15151C] border border-[#20202A] p-4 sm:p-5 rounded-2xl space-y-4">
