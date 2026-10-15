@@ -22,6 +22,7 @@ const createTimer = (settings = DEFAULT_SETTINGS) => ({
   elapsedMs: 0,
   remainingMs: settings.focusTime * 60000,
   normalSegments: [],
+  normalTrackedThrough: null,
   focusSegments: [],
   sessionsCompleted: 0
 });
@@ -54,6 +55,7 @@ const loadState = (settings) => {
     if (!['normal', 'pomodoro'].includes(timer.mode)) timer.mode = 'pomodoro';
     if (!['focus', 'shortBreak', 'longBreak'].includes(timer.phase)) timer.phase = 'focus';
     if (!Array.isArray(timer.normalSegments)) timer.normalSegments = [];
+    if (!Number.isFinite(timer.normalTrackedThrough)) timer.normalTrackedThrough = null;
     if (!Array.isArray(timer.focusSegments)) timer.focusSegments = [];
     if (!Number.isFinite(timer.elapsedMs) || timer.elapsedMs < 0) timer.elapsedMs = 0;
     if (!Number.isFinite(timer.remainingMs) || timer.remainingMs < 0) {
@@ -165,6 +167,38 @@ export default function useStudyTimer(settings = DEFAULT_SETTINGS, onPomodoroCom
   }, [now, onPomodoroComplete, settings, timer.mode, timer.phase, timer.remainingMs, timer.running, timer.startedAt, updateState]);
 
   useEffect(() => {
+    if (!now || !timer.running || timer.mode !== 'normal' || !timer.startedAt) return;
+    if (!isStudyDate(toDateKey(new Date(now)))) return;
+
+    const trackedThrough = timer.normalTrackedThrough ?? timer.startedAt;
+    if (now - trackedThrough < 1000) return;
+
+    updateState((current) => {
+      const currentTimer = current.timer;
+      if (
+        !currentTimer.running ||
+        currentTimer.mode !== 'normal' ||
+        currentTimer.startedAt !== timer.startedAt
+      ) return current;
+
+      const currentTrackedThrough = currentTimer.normalTrackedThrough ?? currentTimer.startedAt;
+      if (now <= currentTrackedThrough) return current;
+
+      return {
+        ...current,
+        studyData: addStudySegments(current.studyData, [{
+          start: currentTrackedThrough,
+          end: now
+        }]),
+        timer: {
+          ...currentTimer,
+          normalTrackedThrough: now
+        }
+      };
+    });
+  }, [now, timer.mode, timer.normalTrackedThrough, timer.running, timer.startedAt, updateState]);
+
+  useEffect(() => {
     if (!now || !timer.running || !timer.startedAt) return;
     const todayKey = toDateKey(new Date(now));
     if (isStudyDate(todayKey)) return;
@@ -181,19 +215,21 @@ export default function useStudyTimer(settings = DEFAULT_SETTINGS, onPomodoroCom
       if (!currentTimer.running || currentTimer.startedAt !== timer.startedAt) return current;
 
       if (currentTimer.mode === 'normal') {
-        const normalSegments = appendSegment(
-          currentTimer.normalSegments,
-          currentTimer.startedAt,
-          cutoff
-        );
+        const trackedThrough = currentTimer.normalTrackedThrough ?? currentTimer.startedAt;
+        const normalSegments = [
+          ...currentTimer.normalSegments,
+          ...appendSegment([], trackedThrough, cutoff)
+        ];
         return {
+          ...current,
           studyData: addStudySegments(current.studyData, normalSegments),
           timer: {
             ...currentTimer,
             running: false,
             startedAt: null,
             elapsedMs: 0,
-            normalSegments: []
+            normalSegments: [],
+            normalTrackedThrough: null
           }
         };
       }
@@ -233,10 +269,18 @@ export default function useStudyTimer(settings = DEFAULT_SETTINGS, onPomodoroCom
 
   const start = useCallback(() => {
     if (!isStudyDate(toDateKey(new Date()))) return;
-    updateState((current) => ({
-      ...current,
-      timer: { ...current.timer, running: true, startedAt: Date.now() }
-    }));
+    updateState((current) => {
+      const startedAt = Date.now();
+      return {
+        ...current,
+        timer: {
+          ...current.timer,
+          running: true,
+          startedAt,
+          normalTrackedThrough: current.timer.mode === 'normal' ? startedAt : null
+        }
+      };
+    });
   }, [updateState]);
 
   const pause = useCallback(() => {
@@ -247,18 +291,20 @@ export default function useStudyTimer(settings = DEFAULT_SETTINGS, onPomodoroCom
       const elapsedMs = Math.max(0, pausedAt - currentTimer.startedAt);
 
       if (currentTimer.mode === 'normal') {
+        const trackedThrough = currentTimer.normalTrackedThrough ?? currentTimer.startedAt;
         return {
           ...current,
+          studyData: addStudySegments(current.studyData, [
+            ...currentTimer.normalSegments,
+            ...appendSegment([], trackedThrough, pausedAt)
+          ]),
           timer: {
             ...currentTimer,
             running: false,
             startedAt: null,
             elapsedMs: currentTimer.elapsedMs + elapsedMs,
-            normalSegments: appendSegment(
-              currentTimer.normalSegments,
-              currentTimer.startedAt,
-              pausedAt
-            )
+            normalSegments: [],
+            normalTrackedThrough: null
           }
         };
       }
@@ -283,15 +329,17 @@ export default function useStudyTimer(settings = DEFAULT_SETTINGS, onPomodoroCom
     updateState((current) => {
       const currentTimer = current.timer;
       if (currentTimer.mode !== 'normal') return current;
-      const segments = currentTimer.running && currentTimer.startedAt
-        ? appendSegment(currentTimer.normalSegments, currentTimer.startedAt, stoppedAt)
+      const trackedThrough = currentTimer.normalTrackedThrough ?? currentTimer.startedAt;
+      const segments = currentTimer.running && trackedThrough
+        ? [...currentTimer.normalSegments, ...appendSegment([], trackedThrough, stoppedAt)]
         : currentTimer.normalSegments;
       const nextTimer = {
         ...currentTimer,
         running: false,
         startedAt: null,
         elapsedMs: 0,
-        normalSegments: []
+        normalSegments: [],
+        normalTrackedThrough: null
       };
 
       return {
